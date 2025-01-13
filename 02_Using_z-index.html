@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="importmap.js"></script>
+    <script type="module" src="test.js"></script>
+    <style type="text/css">
+      div {
+        padding: 10px;
+        opacity: 0.7;
+        text-align: center;
+      }
+
+      strong {
+        font-family: sans-serif;
+      }
+
+      #abs1 {
+        z-index: 5;
+        position: absolute;
+        width: 150px;
+        height: 350px;
+        top: 10px;
+        left: 10px;
+        border: 1px dashed #900;
+        background-color: #fdd;
+      }
+
+      #rel1 {
+        z-index: 3;
+        height: 100px;
+        position: relative;
+        top: 30px;
+        border: 1px dashed #696;
+        background-color: #cfc;
+        margin: 0px 50px 0px 50px;
+      }
+
+      #rel2 {
+        z-index: 2;
+        height: 100px;
+        position: relative;
+        top: 15px;
+        left: 20px;
+        border: 1px dashed #696;
+        background-color: #cfc;
+        margin: 0px 50px 0px 50px;
+      }
+
+      #abs2 {
+        z-index: 1;
+        position: absolute;
+        width: 150px;
+        height: 350px;
+        top: 10px;
+        right: 10px;
+        border: 1px dashed #900;
+        background-color: #fdd;
+      }
+
+      #sta1 {
+        z-index: 8;
+        height: 70px;
+        border: 1px dashed #996;
+        background-color: #ffc;
+        margin: 0px 50px 0px 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="test-container"
+      style="all: initial"
+      data-expected="sta1,abs2,rel2,rel1,abs1"
+    >
+      <div id="abs1">
+        <strong>DIV #1</strong>
+        <br />position: absolute; <br />z-index: 5;
+      </div>
+
+      <div id="rel1">
+        <strong>DIV #2</strong>
+        <br />position: relative; <br />z-index: 3;
+      </div>
+
+      <div id="rel2">
+        <strong>DIV #3</strong>
+        <br />position: relative; <br />z-index: 2;
+      </div>
+
+      <div id="abs2">
+        <strong>DIV #4</strong>
+        <br />position: absolute; <br />z-index: 1;
+      </div>
+
+      <div id="sta1">
+        <strong>DIV #5</strong>
+        <br />no positioning <br />z-index: 8;
+      </div>
+    </div>
+  </body>
+</html>

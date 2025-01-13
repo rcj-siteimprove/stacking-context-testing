@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="importmap.js"></script>
+    <script type="module" src="test.js"></script>
+    <style type="text/css">
+      div {
+        font: 12px Arial;
+      }
+
+      span.bold {
+        font-weight: bold;
+      }
+
+      div.lev1 {
+        width: 250px;
+        height: 70px;
+        position: relative;
+        border: 2px outset #669966;
+        background-color: #ccffcc;
+        padding-left: 5px;
+      }
+
+      #container1 {
+        z-index: 1;
+        position: absolute;
+        top: 30px;
+        left: 75px;
+        border: dashed black;
+      }
+
+      div.lev2 {
+        opacity: 0.9;
+        width: 200px;
+        height: 60px;
+        position: relative;
+        border: 2px outset #990000;
+        background-color: #ffdddd;
+        padding-left: 5px;
+      }
+
+      #container2 {
+        z-index: 1;
+        position: absolute;
+        top: 20px;
+        left: 110px;
+        border: dotted black;
+      }
+
+      div.lev3 {
+        z-index: 10;
+        width: 100px;
+        position: relative;
+        border: 2px outset #000099;
+        background-color: #ddddff;
+        padding-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="test-container"
+      style="all: initial"
+      data-expected="lev1.1,lev1.2,lev1.3,lev1.4,container1,lev2.1,container2,lev3.1,lev3.2,lev3.3,lev3.4,lev3.5,lev3.6,lev3.7,lev3.8,lev3.9,lev3.10,lev3.11,lev2.2,lev2.3,lev2.4"
+    >
+      <div id="lev1.1" class="lev1">
+        <span class="bold">LEVEL #1</span>
+
+        <div id="container1">
+          <div id="lev2.1" class="lev2">
+            <br /><span class="bold">LEVEL #2</span> <br />z-index: 1;
+
+            <div id="container2">
+              <div id="lev3.1" class="lev3">
+                <span class="bold">LEVEL #3</span>
+              </div>
+              <div id="lev3.2" class="lev3">
+                <span class="bold">LEVEL #3</span>
+              </div>
+              <div id="lev3.3" class="lev3">
+                <span class="bold">LEVEL #3</span>
+              </div>
+              <div id="lev3.4" class="lev3">
+                <span class="bold">LEVEL #3</span>
+              </div>
+              <div id="lev3.5" class="lev3">
+                <span class="bold">LEVEL #3</span>
+              </div>
+              <div id="lev3.6" class="lev3">
+                <span class="bold">LEVEL #3</span>
+              </div>
+              <div id="lev3.7" class="lev3">
+                <span class="bold">LEVEL #3</span>
+              </div>
+              <div id="lev3.8" class="lev3">
+                <span class="bold">LEVEL #3</span>
+              </div>
+              <div id="lev3.9" class="lev3">
+                <span class="bold">LEVEL #3</span>
+              </div>
+              <div id="lev3.10" class="lev3">
+                <span class="bold">LEVEL #3</span>
+              </div>
+              <div id="lev3.11" class="lev3">
+                <span class="bold">LEVEL #3</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="lev2.2" class="lev2">
+            <br /><span class="bold">LEVEL #2</span> <br />z-index: 1;
+          </div>
+          <div id="lev2.3" class="lev2">
+            <br /><span class="bold">LEVEL #2</span> <br />z-index: 1;
+          </div>
+          <div id="lev2.4" class="lev2">
+            <br /><span class="bold">LEVEL #2</span> <br />z-index: 1;
+          </div>
+        </div>
+      </div>
+
+      <div id="lev1.2" class="lev1">
+        <span class="bold">LEVEL #1</span>
+      </div>
+
+      <div id="lev1.3" class="lev1">
+        <span class="bold">LEVEL #1</span>
+      </div>
+
+      <div id="lev1.4" class="lev1">
+        <span class="bold">LEVEL #1</span>
+      </div>
+    </div>
+  </body>
+</html>
