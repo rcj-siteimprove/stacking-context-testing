@@ -1,7 +1,9 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "http-server"
+    "dev": "http-server",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
   },
   "dependencies": {
     "@siteimprove/alfa-act": "file:../alfa/packages/alfa-act",
@@ -84,6 +86,8 @@
     "@siteimprove/alfa-xpath": "file:../alfa/packages/alfa-xpath"
   },
   "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.6",
     "http-server": "^14.1.1",
     "prettier": "^3.4.2",
     "typescript": "^5.7.3"
