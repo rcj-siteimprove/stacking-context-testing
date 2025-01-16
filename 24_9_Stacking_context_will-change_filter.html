@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Stacking context - will-change: filter;</title>
+
+    <script src="importmap.js"></script>
+    <script type="module" src="test-harness.js"></script>
+    <style type="text/css">
+      div {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="test-container"
+      style="all: initial"
+      data-expected="div1,div2,div2.1,div1.1"
+    >
+      <div
+        id="div1"
+        style="
+          border: 1px dashed #669966;
+          background-color: #ccffcc;
+          height: 80px;
+        "
+      >
+        <strong>DIV #1</strong><br />
+        <div
+          id="div1.1"
+          style="
+            opacity: 0.8;
+            position: absolute;
+            z-index: 2;
+            width: 150px;
+            height: 250px;
+            top: 20px;
+            left: 250px;
+            border: 1px dashed #990000;
+            background-color: #ffdddd;
+          "
+        >
+          <strong>DIV #1.1</strong><br />
+          <code>
+            position: absolute;<br />
+            z-index: 2;
+          </code>
+        </div>
+      </div>
+
+      <div
+        id="div2"
+        style="
+          will-change: filter;
+          border: 1px dashed #669966;
+          background-color: #ccffcc;
+          height: 200px;
+          position: relative;
+          top: 10px;
+        "
+      >
+        <strong>DIV #2</strong><br />
+        <code>will-change: filter;</code>
+
+        <div
+          id="div2.1"
+          style="
+            position: relative;
+            top: 10px;
+            z-index: 10;
+            border: 1px dashed #000099;
+            background-color: #ddddff;
+            height: 80px;
+          "
+        >
+          <strong>DIV #2.1</strong><br />
+          <code>
+            z-index: 10;<br />
+            position: relative;
+          </code>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

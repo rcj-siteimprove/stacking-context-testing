@@ -8,63 +8,8 @@
     <style type="text/css">
       div {
         padding: 10px;
-        opacity: 0.7;
+        opacity: 0.8;
         text-align: center;
-      }
-
-      strong {
-        font-family: sans-serif;
-      }
-
-      #abs1 {
-        z-index: 5;
-        position: absolute;
-        width: 150px;
-        height: 350px;
-        top: 10px;
-        left: 10px;
-        border: 1px dashed #900;
-        background-color: #fdd;
-      }
-
-      #rel1 {
-        z-index: 3;
-        height: 100px;
-        position: relative;
-        top: 30px;
-        border: 1px dashed #696;
-        background-color: #cfc;
-        margin: 0px 50px 0px 50px;
-      }
-
-      #rel2 {
-        z-index: 2;
-        height: 100px;
-        position: relative;
-        top: 15px;
-        left: 20px;
-        border: 1px dashed #696;
-        background-color: #cfc;
-        margin: 0px 50px 0px 50px;
-      }
-
-      #abs2 {
-        z-index: 1;
-        position: absolute;
-        width: 150px;
-        height: 350px;
-        top: 10px;
-        right: 10px;
-        border: 1px dashed #900;
-        background-color: #fdd;
-      }
-
-      #sta1 {
-        z-index: 8;
-        height: 70px;
-        border: 1px dashed #996;
-        background-color: #ffc;
-        margin: 0px 50px 0px 50px;
       }
     </style>
   </head>
@@ -72,31 +17,101 @@
     <div
       id="test-container"
       style="all: initial"
-      data-expected="sta1,abs2,rel2,rel1,abs1"
+      data-expected="div5,div4,div3,div2,div1"
     >
-      <div id="abs1">
+      <div
+        id="div1"
+        style="
+          z-index: 5;
+          position: absolute;
+          width: 150px;
+          height: 350px;
+          top: 10px;
+          left: 10px;
+          border: 1px dashed #900;
+          background-color: #fdd;
+        "
+      >
         <strong>DIV #1</strong>
-        <br />position: absolute; <br />z-index: 5;
+        <br />
+        <code>
+          position: absolute;<br />
+          z-index: 5;
+        </code>
       </div>
 
-      <div id="rel1">
-        <strong>DIV #2</strong>
-        <br />position: relative; <br />z-index: 3;
+      <div
+        id="div2"
+        style="
+          z-index: 3;
+          height: 100px;
+          position: relative;
+          top: 30px;
+          border: 1px dashed #696;
+          background-color: #cfc;
+        "
+      >
+        <strong>DIV #2</strong><br />
+        <code>
+          position: relative; <br />
+          z-index: 3;
+        </code>
       </div>
 
-      <div id="rel2">
-        <strong>DIV #3</strong>
-        <br />position: relative; <br />z-index: 2;
+      <div
+        id="div3"
+        style="
+          z-index: 2;
+          height: 100px;
+          position: relative;
+          top: 15px;
+          left: 20px;
+          border: 1px dashed #696;
+          background-color: #cfc;
+        "
+      >
+        <strong>DIV #3</strong><br />
+        <code>
+          position: relative;<br />
+          z-index: 2;
+        </code>
       </div>
 
-      <div id="abs2">
-        <strong>DIV #4</strong>
-        <br />position: absolute; <br />z-index: 1;
+      <div
+        id="div4"
+        style="
+          z-index: 1;
+          position: absolute;
+          width: 150px;
+          height: 350px;
+          top: 10px;
+          right: 10px;
+          border: 1px dashed #900;
+          background-color: #fdd;
+        "
+      >
+        <strong>DIV #4</strong><br />
+        <code>
+          position: absolute;<br />
+          z-index: 1;
+        </code>
       </div>
 
-      <div id="sta1">
-        <strong>DIV #5</strong>
-        <br />no positioning <br />z-index: 8;
+      <div
+        id="div5"
+        style="
+          z-index: 8;
+          height: 70px;
+          border: 1px dashed #996;
+          background-color: #ffc;
+          margin: 0px 50px 0px 50px;
+        "
+      >
+        <strong>DIV #5</strong><br />
+        <code>
+          position: static;<br />
+          z-index: 8;
+        </code>
       </div>
     </div>
   </body>

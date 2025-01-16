@@ -1,23 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <title>Stacking context - @keyframes</title>
+    <title>Stacking context - will-change: clip-path;</title>
 
     <script src="importmap.js"></script>
     <script type="module" src="test-harness.js"></script>
     <style type="text/css">
       div {
         padding: 10px;
-      }
-
-      @keyframes slide-in {
-        from {
-          translate: 150vw 0;
-        }
-
-        to {
-          translate: 0 0;
-        }
       }
     </style>
   </head>
@@ -61,7 +51,7 @@
       <div
         id="div2"
         style="
-          animation: 3s slide-in forwards;
+          will-change: clip-path;
           border: 1px dashed #669966;
           background-color: #ccffcc;
           height: 200px;
@@ -70,7 +60,7 @@
         "
       >
         <strong>DIV #2</strong><br />
-        <code>animation: 3s slide-in forwards;</code>
+        <code>will-change: clip-path;</code>
 
         <div
           id="div2.1"

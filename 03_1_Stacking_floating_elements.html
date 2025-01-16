@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Stacking floating elements</title>
+
+    <script src="importmap.js"></script>
+    <script type="module" src="test-harness.js"></script>
+    <style type="text/css">
+      div {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="test-container"
+      style="all: initial"
+      data-expected="div4,span4.1,div2,div3,div1,div5,div6"
+    >
+      <div
+        id="div1"
+        style="
+          position: absolute;
+          width: 150px;
+          height: 200px;
+          top: 20px;
+          right: 140px;
+          border: 1px dashed #900;
+          background-color: #fdd;
+          opacity: 0.8;
+        "
+      >
+        <strong>DIV #1</strong><br />
+        <code>position: absolute;</code>
+      </div>
+
+      <div
+        id="div2"
+        style="
+          float: left;
+          opacity: 0.8;
+          width: 150px;
+          height: 200px;
+          border: 1px dashed #090;
+          background-color: #cfc;
+          margin: 10px;
+        "
+      >
+        <strong>DIV #2</strong><br />
+        <code>float: left;</code>
+      </div>
+
+      <div
+        id="div3"
+        style="
+          float: right;
+          margin: 20px;
+          width: 150px;
+          height: 200px;
+          border: 1px dashed #090;
+          background-color: #cfc;
+          text-align: right;
+        "
+      >
+        <strong>DIV #3</strong><br />
+        <code>float: right;</code>
+      </div>
+
+      <div
+        id="div4"
+        style="height: 100px; border: 1px dashed #996; background-color: #ffc"
+      >
+        <strong>DIV #4</strong><br />
+        <code>position: static;</code><br />
+        <span
+          id="span4.1"
+          style="
+            background-color: #b3d9ff;
+            border: 1px dashed #80a8cc;
+            margin-left: -50px;
+          "
+          ><strong>SPAN #4.1</strong></span
+        >
+      </div>
+
+      <div
+        id="div5"
+        style="
+          position: absolute;
+          width: 150px;
+          height: 100px;
+          top: 80px;
+          left: 100px;
+          border: 1px dashed #990;
+          background-color: #fdd;
+        "
+      >
+        <strong>DIV #5</strong><br /><code>position: absolute;</code>
+      </div>
+
+      <div
+        id="div6"
+        style="
+          position: relative;
+          opacity: 0.8;
+          top: -10px;
+          left: 20px;
+          width: 350px;
+          border: 1px dashed #996;
+          background-color: #cff;
+        "
+      >
+        <strong>DIV #6</strong><br /><code>position: relative;</code>
+      </div>
+    </div>
+  </body>
+</html>
